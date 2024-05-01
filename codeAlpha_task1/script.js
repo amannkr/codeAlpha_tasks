@@ -7,10 +7,7 @@ const added = document.querySelector(".added");
 const notAdded = document.querySelector(".notAdded");
 const textCentre = document.querySelector(".text-centre");
 const tableBody = document.getElementById("tableBody");
-
 let nrow = 0;
-let countDel = 1;
-let chkDel = 0;
 
 // ::: Create Buttons ::: //
 const createBtn = function (name) {
@@ -61,16 +58,12 @@ const editTask = function (editBtns, editBtn, checkBtn, delBtn) {
       idx = Number(task?.parentElement?.parentElement?.rowIndex) - 1;
 
       if (idx >= 1) {
-        console.log(idx);
-
         let taskName = tableBody?.rows[idx]?.cells[0]?.innerHTML;
         taskIn.value = taskName;
 
         if (tableBody?.rows[idx]?.cells[1]?.innerHTML === "No due Date") {
-          console.log(`here`);
           taskIn.focus();
         } else {
-          console.log(`here i am`);
           let taskDate = tableBody?.rows[idx]?.cells[1]?.innerHTML;
           dateIn.value = taskDate;
           dateIn.focus();
